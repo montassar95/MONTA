@@ -1,0 +1,312 @@
+
+<div class="p-grid layout-dashboard">
+     
+    <div class="p-col-12 p-xl-2 p-md-4">
+        <div class="p-grid p-nogutter overview-box overview-box-1">
+            <div class="p-col-3 overview-box-icon">
+                <img src="assets/layout/images/dashboard/icon-messages.svg" alt="mirage-layout" />
+            </div>
+            <div class="p-col-6 overview-box-text">
+                <h1>Messages</h1>
+                <span>24 new since last visit</span>
+            </div>
+            <div class="p-col-3 overview-box-status">
+                440
+            </div>
+        </div>
+    </div>
+    <div class="p-col-12 p-xl-2 p-md-4">
+        <div class="p-grid p-nogutter overview-box overview-box-1">
+            <div class="p-col-3 overview-box-icon">
+                <img src="assets/layout/images/dashboard/icon-messages.svg" alt="mirage-layout" />
+            </div>
+            <div class="p-col-6 overview-box-text">
+                <h1>Messages</h1>
+                <span>24 new since last visit</span>
+            </div>
+            <div class="p-col-3 overview-box-status">
+                440
+            </div>
+        </div>
+    </div>
+    <div class="p-col-12 p-xl-2 p-md-4">
+        <div class="p-grid p-nogutter overview-box overview-box-1">
+            <div class="p-col-3 overview-box-icon">
+                <img src="assets/layout/images/dashboard/icon-messages.svg" alt="mirage-layout" />
+            </div>
+            <div class="p-col-6 overview-box-text">
+                <h1>Messages</h1>
+                <span>24 new since last visit</span>
+            </div>
+            <div class="p-col-3 overview-box-status">
+                440
+            </div>
+        </div>
+    </div>
+    <div class="p-col-12 p-xl-2 p-md-4">
+        <div class="p-grid p-nogutter overview-box overview-box-2">
+            <div class="p-col-3 overview-box-icon">
+                <img src="assets/layout/images/dashboard/icon-checkins.svg" alt="mirage-layout" />
+            </div>
+            <div class="p-col-6 overview-box-text">
+                <h1>Check-ins</h1>
+                <span>48 new since last visit</span>
+            </div>
+            <div class="p-col-3 overview-box-status">
+                532
+            </div>
+        </div>
+    </div>
+    <div class="p-col-12 p-xl-2 p-md-4">
+        <div class="p-grid p-nogutter overview-box overview-box-3">
+            <div class="p-col-3 overview-box-icon">
+                <img src="assets/layout/images/dashboard/icon-filessynced.svg" alt="mirage-layout" />
+            </div>
+            <div class="p-col-6 overview-box-text">
+                <h1>Files Synced</h1>
+                <span>32,56 / 250 GB</span>
+            </div>
+            <div class="p-col-3 overview-box-status">
+                28
+            </div>
+        </div>
+    </div>
+    <div class="p-col-12 p-xl-2 p-md-4">
+        <div class="p-grid p-nogutter overview-box overview-box-4">
+            <div class="p-col-3 overview-box-icon">
+                <img src="assets/layout/images/dashboard/icon-usersonline.png" alt="mirage-layout" />
+            </div>
+            <div class="p-col-6 overview-box-text">
+                <h1>Users Online</h1>
+                <span>72 new user this week</span>
+            </div>
+            <div class="p-col-3 overview-box-status">
+                256
+            </div>
+        </div>
+    </div>
+
+    
+   
+      
+   
+   
+
+    <div class="p-col-2"  ></div>
+    
+        <div class="p-col-8"  >
+            <div class="card card-w-title" style="opacity:0.6;">
+                <h1>Input Groups</h1>
+    
+                <div class="p-grid form-group" >
+                    <div class="p-col-12 p-md-4" >
+                        <a style=" background-color:black; " class="layout-megamenu-button" href="#" (click)="app.onMegaMenuButtonClick($event)">
+                            <i class="pi pi-comment"  style=" background-color:black; "></i>
+                            Créer une annonce
+                        </a>
+                    </div>
+    
+                   
+    
+                    <div class="p-col-12 p-md-4">
+                        <div class="ui-inputgroup">
+                            <button pButton type="button" label="Search"></button>
+                            <input type="text" pInputText placeholder="Keyword" style="border-left:0">
+                        </div>
+                    </div>
+    
+                    <div class="p-col-12 p-md-4">
+                        <div class="ui-inputgroup">
+                            <span class="ui-inputgroup-addon ui-inputgroup-addon-checkbox">
+                                <p-checkbox></p-checkbox>
+                            </span>
+                            <input type="text" pInputText placeholder="Username" style="border-left:0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-col-2"  ></div>
+
+  
+ 
+    <div class="p-col-12 p-lg-8">
+         
+    <p-dataView #dv [value]="products" [paginator]="true" [rows]="18" filterBy="name"
+    [sortField]="sortField" [sortOrder]="sortOrder" layout="grid" >
+    <p-header >
+      <div  style="text-align: center;">
+        <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+       
+            <!-- <a href="#" class="layout-rightpanel-button" (click)="app.onRightPanelButtonClick($event)">
+                plus de filtres     
+             </a> -->
+            </div>
+    </p-header>
+    <p-footer>
+        <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+    </p-footer>
+    <ng-template pTemplate="header" >
+        <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
+            <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By Price" (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown>
+            <span class="p-input-icon-left p-mb-2 p-mb-md-0">
+                <i class="pi pi-search"></i>
+                <input type="search" pInputText placeholder="Search by Name" (input)="dv.filter($event.target.value)">
+            </span>
+            <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+        </div>
+    </ng-template>
+    <ng-template let-product pTemplate="listItem">
+        <div class="p-col-12">
+            <div class="product-list-item"  style="background-image: url('assets/demo/images/back4.jpg');">
+                <img [src]="'assets/demo/images/s5.jpg'" [alt]="product.name"/>
+                <div class="product-list-detail">
+                    <div class="product-name">{{product.name}}</div>
+                    <div class="product-description">{{product.description}}</div>
+
+                   <i class="pi pi-map-marker"></i><span class="product-category">{{product.category}}</span>
+                </div>
+                <div class="product-list-action">
+                    <span class="product-price">{{product.price}} DT</span>
+                    <p-button icon="pi pi-shopping-cart" label="Add to Cart" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+                    <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template let-product pTemplate="gridItem" >
+        <div class="p-col-12 p-md-4" >
+            <div class="product-grid-item card" style="background-image: url('assets/demo/images/back4.jpg');">
+                <div class="product-grid-item-top">
+                    <div>
+                       <i class="pi pi-map-marker"></i>
+                        <span class="product-category">{{product.category}}</span>
+                    </div>
+                    <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
+                </div>
+                <div class="product-grid-item-content">
+                    <img [src]="'assets/demo/images/s5.jpg'"  />
+                    <!-- <iframe  
+                    src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                    </iframe> -->
+                    <div class="product-name">{{product.name}}</div>
+                    <div class="product-description">{{product.description}}</div>
+                   </div>
+                <div class="product-grid-item-bottom">
+                    <span class="product-price">{{product.price}} DT</span>
+                    <p-button icon="pi pi-shopping-cart" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-dataView>
+
+
+    </div>
+
+    <div class="p-col-12 p-lg-4">
+        <div class="card map">
+            <div class="map-image">
+                <img src="assets/demo/images/d.jpg" alt="mirage-layout" />
+            </div>
+
+            <div class="map-info">
+                <div class="p-grid p-nogutter map-info-header">
+                    <div class="p-col-6">
+                        <h2>rang rover</h2>
+                        <span>10000 DT</span>
+                    </div>
+                    <div class="p-col-6 location-change">
+                        <i class="pi pi-map-maker"></i>
+                        <span>Ben arous</span>
+                    </div>
+                </div>
+                <div class="p-grid p-nogutter map-info-bar">
+                    <div class="p-col-4 info">
+                        <div class="location-point point-1"></div>
+                        <span>montassar</span>
+                    </div>
+                    <div class="p-col-4 info">
+                        <div class="location-point point-2"></div>
+                        <span>95472986</span>
+                    </div>
+
+                    <div class="p-col-4 info">
+                        <div class="location-point point-3"></div>
+                        <span>Location par jour</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card map">
+            
+            <div class="map-image">
+                <img src="assets/demo/images/d.jpg" alt="mirage-layout" />
+            </div>
+
+            <div class="map-info">
+                <div class="p-grid p-nogutter map-info-header">
+                    <div class="p-col-6">
+                        <h2>rang rover</h2>
+                        <span>10000 DT</span>
+                    </div>
+                    <div class="p-col-6 location-change">
+                        <i class="pi pi-map-maker"></i>
+                        <span>Ben arous</span>
+                    </div>
+                </div>
+                <div class="p-grid p-nogutter map-info-bar">
+                    <div class="p-col-4 info">
+                        <div class="location-point point-1"></div>
+                        <span>montassar</span>
+                    </div>
+                    <div class="p-col-4 info">
+                        <div class="location-point point-2"></div>
+                        <span>95472986</span>
+                    </div>
+
+                    <div class="p-col-4 info">
+                        <div class="location-point point-3"></div>
+                        <span>Location par jour</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card map">
+            <div class="map-image">
+                <img src="assets/demo/images/d.jpg" alt="mirage-layout" />
+            </div>
+
+            <div class="map-info">
+                <div class="p-grid p-nogutter map-info-header">
+                    <div class="p-col-6">
+                        <h2>rang rover</h2>
+                        <span>10000 DT</span>
+                    </div>
+                    <div class="p-col-6 location-change">
+                        <i class="pi pi-map-maker"></i>
+                        <span>Ben arous</span>
+                    </div>
+                </div>
+                <div class="p-grid p-nogutter map-info-bar">
+                    <div class="p-col-4 info">
+                        <div class="location-point point-1"></div>
+                        <span>montassar</span>
+                    </div>
+                    <div class="p-col-4 info">
+                        <div class="location-point point-2"></div>
+                        <span>95472986</span>
+                    </div>
+
+                    <div class="p-col-4 info">
+                        <div class="location-point point-3"></div>
+                        <span>Location par jour</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
